@@ -1,12 +1,16 @@
 # secret_sender_python
 
 Program implements the following command-line interface: 
-./packet_sender [ip_address] [interface] [type] [message]
-program send the [message], encoded as described below, to the IP address specified by [ip_address] 
+
+     ./packet_sender [ip_address] [interface] [type] [message]
+
+program sends the [message], encoded as described below, to the IP address specified by [ip_address] 
 on physical interface [interface]. 
+
 [type] specifies the type of packet that the IP datagram will hold, where [type] can be one of:
-• 0: ICMP Echo Request Message
-• 1: TCP SYN packet to port 80
+
+    • 0: ICMP Echo Request Message
+    • 1: TCP SYN packet to port 80
 
 Each byte of the message are sent in the IP layer of a packet 
 (so one packet is sent for every byte of the message).
@@ -24,9 +28,9 @@ Python 2.7.11 on ubuntu linux.
 
 
 
-How to run the executable:
+# How to run the executable:
 --------------------------
-# ./packet_sender [ip_address] [interface] [type] [message]
+        ./packet_sender [ip_address] [interface] [type] [message]
 Where :
 
         ip_address : Destination IP address
@@ -37,53 +41,53 @@ Where :
         
         message    : message to be sent in packet
 
-All of the options are mandotary.
+ All of the options are mandotary.
 ---------------------------
-Example of a run:
-# ./packet_sender.py 192.168.43.167 eth0 0 test
+# Example of a run:
+    ./packet_sender.py 192.168.43.167 eth0 0 test
 
-Sending IPv4/ICMP packet:
+    Sending IPv4/ICMP packet:
 
-###[ IP ]###
-  version   = 4
-  ihl       = None
-  tos       = 0x0
-  len       = None
+    ###[ IP ]###
+      version   = 4
+      ihl       = None
+      tos       = 0x0
+      len       = None
   id        = 29735
   flags     = DF
   frag      = 0
   ttl       = 64
   proto     = icmp
   chksum    = None
-  src       = 192.168.43.92
-  dst       = 192.168.43.167
-  \options   \
-###[ ICMP ]###
+      src       = 192.168.43.92
+      dst       = 192.168.43.167
+      \options   \
+    ###[ ICMP ]###
      type      = echo-request
      code      = 0
      chksum    = None
      id        = 0x27
      seq       = 0x1
-.
-Sent 1 packets.
+    .
+    Sent 1 packets.
 
 Sending IPv4/ICMP packet:
 
-###[ IP ]###
-  version   = 4
-  ihl       = None
-  tos       = 0x0
-  len       = None
-  id        = 25895
-  flags     = DF
-  frag      = 1
-  ttl       = 64
-  proto     = icmp
-  chksum    = None
-  src       = 192.168.43.92
-  dst       = 192.168.43.167
-  \options   \
-###[ ICMP ]###
+    ###[ IP ]###
+  version = 4 
+ihl = None 
+tos = 0x0 
+len = None 
+id = 25895 
+flags = DF
+ frag = 1
+ ttl = 64
+ proto = icmp
+ chksum = None
+ src = 192.168.43.92
+ dst = 192.168.43.167
+ \options
+    ###[ ICMP ]###
      type      = echo-request
      code      = 0
      chksum    = None
@@ -94,7 +98,7 @@ Sent 1 packets.
 
 Sending IPv4/ICMP packet:
 
-###[ IP ]###
+    ###[ IP ]###
   version   = 4
   ihl       = None
   tos       = 0x0
@@ -108,7 +112,7 @@ Sending IPv4/ICMP packet:
   src       = 192.168.43.92
   dst       = 192.168.43.167
   \options   \
-###[ ICMP ]###
+    ###[ ICMP ]###
      type      = echo-request
      code      = 0
      chksum    = None
@@ -119,7 +123,7 @@ Sent 1 packets.
 
 Sending IPv4/ICMP packet:
 
-###[ IP ]###
+    ###[ IP ]###
   version   = 4
   ihl       = None
   tos       = 0x0
@@ -133,7 +137,7 @@ Sending IPv4/ICMP packet:
   src       = 192.168.43.92
   dst       = 192.168.43.167
   \options   \
-###[ ICMP ]###
+    ###[ ICMP ]###
      type      = echo-request
      code      = 0
      chksum    = None
@@ -144,7 +148,7 @@ Sent 1 packets.
 
 Sending IPv4/ICMP packet:
 
-###[ IP ]###
+    ###[ IP ]###
   version   = 4
   ihl       = None
   tos       = 0x0
@@ -158,13 +162,13 @@ Sending IPv4/ICMP packet:
   src       = 192.168.43.92
   dst       = 192.168.43.167
   \options   \
-###[ ICMP ]###
+    ###[ ICMP ]###
      type      = echo-request
      code      = 0
      chksum    = None
      id        = 0x27
      seq       = 0x5
-.
-Sent 1 packets.
+    .
+    Sent 1 packets.
 
 
