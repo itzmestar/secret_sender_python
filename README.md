@@ -1,16 +1,16 @@
 # secret_sender_python
 
-Program implements the following command-line interface: 
+Program implements the following command-line interface using `scapy` module: 
 
      ./packet_sender [ip_address] [interface] [type] [message]
 
-program sends the [message], encoded as described below, to the IP address specified by [ip_address] 
-on physical interface [interface]. 
+program sends the `[message]`, encoded as described below, to the IP address specified by `[ip_address]` 
+on physical interface `[interface]`. 
 
-[type] specifies the type of packet that the IP datagram will hold, where [type] can be one of:
+`[type]` specifies the type of packet that the IP datagram will hold, where `[type]` can be one of:
 
-    • 0: ICMP Echo Request Message
-    • 1: TCP SYN packet to port 80
+    * 0: ICMP Echo Request Message
+    * 1: TCP SYN packet to port 80
 
 Each byte of the message are sent in the IP layer of a packet 
 (so one packet is sent for every byte of the message).
@@ -53,12 +53,12 @@ Where :
       ihl       = None
       tos       = 0x0
       len       = None
-  id        = 29735
-  flags     = DF
-  frag      = 0
-  ttl       = 64
-  proto     = icmp
-  chksum    = None
+      id        = 29735
+      flags     = DF
+      frag      = 0
+      ttl       = 64
+      proto     = icmp
+      chksum    = None
       src       = 192.168.43.92
       dst       = 192.168.43.167
       \options   \
@@ -71,97 +71,97 @@ Where :
     .
     Sent 1 packets.
 
-Sending IPv4/ICMP packet:
+    Sending IPv4/ICMP packet:
 
     ###[ IP ]###
-  version = 4 
-ihl = None 
-tos = 0x0 
-len = None 
-id = 25895 
-flags = DF
- frag = 1
- ttl = 64
- proto = icmp
- chksum = None
- src = 192.168.43.92
- dst = 192.168.43.167
- \options
-    ###[ ICMP ]###
+      version = 4 
+    ihl = None 
+    tos = 0x0 
+    len = None 
+    id = 25895 
+    flags = DF
+     frag = 1
+     ttl = 64
+     proto = icmp
+     chksum = None
+     src = 192.168.43.92
+     dst = 192.168.43.167
+     \options
+     ###[ ICMP ]###
      type      = echo-request
      code      = 0
      chksum    = None
      id        = 0x27
      seq       = 0x2
-.
-Sent 1 packets.
+    .
+    Sent 1 packets.
 
-Sending IPv4/ICMP packet:
+    Sending IPv4/ICMP packet:
 
     ###[ IP ]###
-  version   = 4
-  ihl       = None
-  tos       = 0x0
-  len       = None
-  id        = 29479
-  flags     = DF
-  frag      = 2
-  ttl       = 64
-  proto     = icmp
-  chksum    = None
-  src       = 192.168.43.92
-  dst       = 192.168.43.167
-  \options   \
+      version   = 4
+      ihl       = None
+      tos       = 0x0
+      len       = None
+      id        = 29479
+      flags     = DF
+      frag      = 2
+      ttl       = 64
+      proto     = icmp
+      chksum    = None
+      src       = 192.168.43.92
+      dst       = 192.168.43.167
+      \options   \
     ###[ ICMP ]###
      type      = echo-request
      code      = 0
      chksum    = None
      id        = 0x27
      seq       = 0x3
-.
-Sent 1 packets.
+    .
+    Sent 1 packets.
 
-Sending IPv4/ICMP packet:
+    Sending IPv4/ICMP packet:
 
     ###[ IP ]###
-  version   = 4
-  ihl       = None
-  tos       = 0x0
-  len       = None
-  id        = 29735
-  flags     = DF
-  frag      = 3
-  ttl       = 64
-  proto     = icmp
-  chksum    = None
-  src       = 192.168.43.92
-  dst       = 192.168.43.167
-  \options   \
+      version   = 4
+      ihl       = None
+      tos       = 0x0
+      len       = None
+      id        = 29735
+      flags     = DF
+      frag      = 3
+      ttl       = 64
+      proto     = icmp
+      chksum    = None
+      src       = 192.168.43.92
+      dst       = 192.168.43.167
+      \options   \
     ###[ ICMP ]###
      type      = echo-request
      code      = 0
      chksum    = None
      id        = 0x27
      seq       = 0x4
-.
-Sent 1 packets.
+    .
+    Sent 1 packets.
 
-Sending IPv4/ICMP packet:
+    Sending IPv4/ICMP packet:
 
     ###[ IP ]###
-  version   = 4
-  ihl       = None
-  tos       = 0x0
-  len       = None
-  id        = 39
-  flags     = DF
-  frag      = 4100
-  ttl       = 64
-  proto     = icmp
-  chksum    = None
-  src       = 192.168.43.92
-  dst       = 192.168.43.167
-  \options   \
+      version   = 4
+      ihl       = None
+      tos       = 0x0
+      len       = None
+      id        = 39
+      flags     = DF
+      frag      = 4100
+      ttl       = 64
+      proto     = icmp
+      chksum    = None
+      src       = 192.168.43.92
+      dst       = 192.168.43.167
+      \options   \
     ###[ ICMP ]###
      type      = echo-request
      code      = 0
